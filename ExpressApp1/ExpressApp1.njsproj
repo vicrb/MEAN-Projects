@@ -33,6 +33,7 @@
     <Compile Include="app.js" />
     <Compile Include="routes\BuildActivity.js" />
     <Compile Include="routes\DBApi\LibraryData.js" />
+    <Compile Include="routes\DBApi\MongoConnect.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\echo.js" />
     <Compile Include="bin\www" />
@@ -47,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="Modules\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
