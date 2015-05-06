@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="routes\DBApi\Book_Schema.js" />
     <Compile Include="routes\BuildActivity.js" />
     <Compile Include="routes\DBApi\LibraryData.js" />
     <Compile Include="routes\DBApi\MongoConnect.js" />
@@ -49,6 +50,7 @@
   <ItemGroup>
     <Folder Include="bin\" />
     <Folder Include="Modules\" />
+    <Folder Include="Models\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />

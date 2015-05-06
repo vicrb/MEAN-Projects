@@ -1,10 +1,16 @@
 ﻿var express = require('express');
 var router = express.Router();
-var LibData = require('./DBApi/LibraryData.js')
+var LibData = require('./DBApi/LibraryData.js');
+
+
 
 //Router
+
 //Get a list of all books
 router.get('/books', LibData.GetAllBooks);
+
+//Get using Object Ddata Mapper (mongoose)
+router.get('/booksByODM', LibData.GetBookUsingModel);
 
 //Insert a new book
 router.post('/books', LibData.AddNewBook);

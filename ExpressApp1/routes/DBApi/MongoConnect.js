@@ -1,3 +1,3 @@
-﻿var mongoose = require('mongoose');
+﻿//Do Database connection here
+//Do Generic Database stuff here
 
-mongoose.connect('mongodb://VMongoLab:nucRroXCPBIaglTNBM1N9iLtblnYJEjurjL.QMHMauM-@ds060977.mongolab.com:60977/VMongoLab');

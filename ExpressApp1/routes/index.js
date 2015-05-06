@@ -16,6 +16,7 @@ router.get('/', function (req, res) {
     res.write('Src Ctrl CheckOut    GET:    /DNAApi/SrcCtrl/CheckOut \n\n');
     res.write('Build Root           GET     /DNAApi/Build \n\n');
     res.write('Get All Books:       GET:    /DNAApi/books \n');
+    res.write('Get All Books by ODM:GET:    /DNAApi/booksByODM \n');
     res.write('Get All Books by id: GET:    /DNAApi/books/:id \n');
     res.write('Add new Book:       POST:    /DNAApi/books \n');
     res.write('Update a Book:       PUT:    /DNAApi/books/:id \n');
