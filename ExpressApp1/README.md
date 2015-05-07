@@ -17,37 +17,37 @@ Usage examples for this REST API
 
 Node Modules
 ------------
-Web Framework			: Express
-MVC Framework			: ?
-REST Api Framework		: Loopback
+Web Framework			  : Express
+MVC Framework			  : ? 
+REST Api Framework	: Loopback
 RSDL generation			: 
-Authentication			: PassportJS, Drywall, Connect-Auth
-Authorization			:
-Security/TLS/SSH/SSL		:
+Authentication			: PassportJS, Drywall, Connect-Auth \n
+Authorization			  :
+Security/TLS/SSH/SSL:
 Message Security		: 
-Encryption			:
-Reliability			: (looking for promises based approach)
-Logging				: Bunyan, Winston, Log4JS for Node
+Encryption			    :
+Reliability			    : (looking for promises based approach)
+Logging				      : Bunyan, Winston, Log4JS for Node
 Log Parsing tool		:
-Database			: mongoDB, DocumentDB, SQL, Azure storage
+Database			      : mongoDB, DocumentDB, SQL, Azure storage
 Database driver			: NodeJS native driver, mongoose, ?
 Database tools			: mongoose-express, mongo shell
-Object document mapper		: mongoose
-Configuration			: Node-config
-Performance Monitoring		: New-Relic
-Validation			: Joi, mongoose
-XML, XAML, JSON Parsers		: 
-Monitoring			:
-Deployment			:
-Packaging			:
+Object doc mapper		: mongoose
+Configuration			  : Node-config
+Perf Monitoring		  : New-Relic
+Validation			    : Joi, mongoose
+XML, JSON Parsers		: 
+Monitoring			    :
+Deployment			    :
+Packaging			      :
 Documentation gen		: Dox, acquit
-Readability			: Typescript for Node
-Versioning			:
-Patterns			: Node Module Pattern, Factory Pattern, REST, Modularity, Resource modelling
-Help authoring/Wiki		: 
-Control Flow			:
+Readability			    : Typescript for Node
+Versioning			    :
+Patterns  			    : Node Module Pattern, Factory Pattern, REST, Modularity, Resource modelling
+Help authoring/Wiki	: 
+Control Flow			  :
 Error Handling			:
-Async				:
+Async				        :
 Testing framework		: Mocha, ?
 
 
