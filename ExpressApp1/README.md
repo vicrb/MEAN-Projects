@@ -23,31 +23,31 @@ REST Api Framework		: Loopback
 RSDL generation			: 
 Authentication			: PassportJS, Drywall, Connect-Auth
 Authorization			:
-Security/TLS/SSH/SSL	:
+Security/TLS/SSH/SSL		:
 Message Security		: 
-Encryption				:
-Reliability				: (looking for promises based approach)
-Logging					: Bunyan, Winston, Log4JS for Node
-Log Parsing	tool		:
-Database				: mongoDB, DocumentDB, SQL, Azure storage
+Encryption			:
+Reliability			: (looking for promises based approach)
+Logging				: Bunyan, Winston, Log4JS for Node
+Log Parsing tool		:
+Database			: mongoDB, DocumentDB, SQL, Azure storage
 Database driver			: NodeJS native driver, mongoose, ?
 Database tools			: mongoose-express, mongo shell
-Object document mapper	: mongoose
+Object document mapper		: mongoose
 Configuration			: Node-config
-Performance Monitoring	: New-Relic
-Validation				: Joi, mongoose
-XML, XAML, JSON Parsers	: 
-Monitoring				:
-Deployment				:
-Packaging				:
+Performance Monitoring		: New-Relic
+Validation			: Joi, mongoose
+XML, XAML, JSON Parsers		: 
+Monitoring			:
+Deployment			:
+Packaging			:
 Documentation gen		: Dox, acquit
-Readability				: Typescript for Node
-Versioning				:
-Patterns				: Node Module Pattern, Factory Pattern, REST, Modularity, Resource modelling
+Readability			: Typescript for Node
+Versioning			:
+Patterns			: Node Module Pattern, Factory Pattern, REST, Modularity, Resource modelling
 Help authoring/Wiki		: 
 Control Flow			:
 Error Handling			:
-Async					:
+Async				:
 Testing framework		: Mocha, ?
 
 
@@ -64,15 +64,16 @@ ToDo: Design
 MongoDB / Database
 ------------------
 MongoDB Sandbox on Azure
-Connection String		: mongodb://VMongoLab:nucRroXCPBIaglTNBM1N9iLtblnYJEjurjL.QMHMauM-@ds060977.mongolab.com:60977/VMongoLab
-						: mongodb://<dbuser>:<dbpassword>@ds060977.mongolab.com:60977/VMongoLab
+Connection String		
+: mongodb://VMongoLab:nucRroXCPBIaglTNBM1N9iLtblnYJEjurjL.QMHMauM-@ds060977.mongolab.com:60977/VMongoLab
+: mongodb://<dbuser>:<dbpassword>@ds060977.mongolab.com:60977/VMongoLab
 
 
 
 Third party interfaces and API's
 --------------------------------
 Team Foundation Server	: OData API for TFS, details?
-Jenkins					: REST API for Jenkins, details?
+Jenkins			: REST API for Jenkins, details?
 Chef, Puppet
 Selenium
 MSTest
