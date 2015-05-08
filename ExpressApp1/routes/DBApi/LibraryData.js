@@ -4,7 +4,8 @@ var mongodb = require('mongodb');
 //MongoDB object data mapper
 var mongoose = require('mongoose');
 //User Config module, Get this from config
-var mongoServer = 'mongodb://vuser1:vijay123@ds060977.mongolab.com:60977/VMongoLab';
+//Create Azure or any other mongoDB and provide connection string here
+var mongoServer = 'mongodb://<username>:<password>.mongolab.com:60977/VMongoLab';
 
 //Schema
 var TestBooksSchema = new mongoose.Schema({
