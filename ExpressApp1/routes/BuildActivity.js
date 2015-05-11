@@ -29,7 +29,7 @@ router.put('/Build/BuildAgents/:MachineName', function CheckIn(request, response
 
 //Get All BuildDefinitions
 //This should be POST ??
-router.get('/Build/BuildDefinition', function CheckOut(request, response) {
+router.get('/:ProjectName?/Build/BuildDefinition', function CheckOut(request, response) {
     
     //Parse request object
     //Identify the key elements needed by the factory class
@@ -42,10 +42,12 @@ router.get('/Build/BuildDefinition', function CheckOut(request, response) {
     
     //1. Parse request for json ---- Implement as node-middleware
     //2. Save in CustomRequest model/object ---- Implement as mode-middleware
-    //3. Use Factory class - ???? How and where to implement this ??
-    //4. Factory class will give an object encapsulating the target server api and its methods
-    //5. Use methods of the Target server api to perform action
-
+    //3. Read config to get connection and related information
+    //4. Use Factory class - ???? How and where to implement this ??
+    //5. Factory class will give an object encapsulating the target server api and its methods
+    //6. Use methods of the Target server api to perform action
+    
+    //Temp
     var BuildDef = {
         BuildServer: "",
         ConfigurationFolderPath: "",
@@ -55,6 +57,22 @@ router.get('/Build/BuildDefinition', function CheckOut(request, response) {
         RetentionPolicies: "",
         Workspace: ""
     };
+    
+    //1. Parse inputs
+    var ProjectName = request.params.ProjectName;
+    
+    //Invoke Factory 
+    var BuildAPI = require('BuildAPI');
+    var BuildApiFactoryObject = BuildAPI.GetSomething(ProjectName);
+    
+    //Move this inside the API
+    //Get from configs
+    var Server = '';
+    var ConnectionString = '';
+    var Collection = '';
+        
+    BuildApiFactoryObject.GetBuildDefinitions(ProjectName);
+
     response.send(BuildDef);
 });
 
@@ -62,6 +80,10 @@ router.get('/Build/BuildDefinition', function CheckOut(request, response) {
 router.get('/Build/BuildDefinition/:BuildServer', function CheckOut(request, response) {
     response.send('Get BuildDefiniotion by BuildServer');
 });
+
+//Do we need POST to get all build definitions?
+//because 
+router.post('/Build/BuildDefinitions')
 
 //Add BuildDefinition
 router.put('/Build/BuildDefinition', function CheckOut(request, response) {
