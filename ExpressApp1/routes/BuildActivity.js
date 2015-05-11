@@ -56,9 +56,11 @@ router.get('/Build/BuildDefinition', function GetAllBuildDefinitions(request, re
     
     //Invoke Factory 
     var BuildApiFactoryObj = new BuildApiFactory('TFS');
-        
+    
+    //ToDo: constructor information  
     //BuildApiFactory.constructor();
     
+    //ToDo: Utilize factory -open for extension
     switch (BuildApiFactoryObj.BuildServerType) {
         case 'TFS': {
             var BuildApiObj = BuildApiFactory.prototype.GetTFSBuildApi('', '');
