@@ -1,8 +1,10 @@
 ﻿var express = require('express');
 var router = express.Router();
+var BuildApiFactory = require('./BuildApi/BuildAPIFactory.js');
 
 router.get('/Build', function BuildRoot(request, response) {
-    response.send('In ../Build API Root');
+    response.send('In ../Build API Root ... show index');
+    //ToDo:  BuildAutoIndexer for REST. To be used in this scenario.
 });
 
 //Get All BuildAgents
@@ -29,7 +31,7 @@ router.put('/Build/BuildAgents/:MachineName', function CheckIn(request, response
 
 //Get All BuildDefinitions
 //This should be POST ??
-router.get('/:ProjectName?/Build/BuildDefinition', function CheckOut(request, response) {
+router.get('/Build/BuildDefinition', function GetAllBuildDefinitions(request, response) {
     
     //Parse request object
     //Identify the key elements needed by the factory class
@@ -47,43 +49,39 @@ router.get('/:ProjectName?/Build/BuildDefinition', function CheckOut(request, re
     //5. Factory class will give an object encapsulating the target server api and its methods
     //6. Use methods of the Target server api to perform action
     
-    //Temp
-    var BuildDef = {
-        BuildServer: "",
-        ConfigurationFolderPath: "",
-        DefaultDropLocation: "",
-        Description: "",
-        Enabled: "",
-        RetentionPolicies: "",
-        Workspace: ""
-    };
+    
     
     //1. Parse inputs
-    var ProjectName = request.params.ProjectName;
+    //var ProjectName = request.params.ProjectName;
     
     //Invoke Factory 
-    var BuildAPI = require('BuildAPI');
-    var BuildApiFactoryObject = BuildAPI.GetSomething(ProjectName);
-    
-    //Move this inside the API
-    //Get from configs
-    var Server = '';
-    var ConnectionString = '';
-    var Collection = '';
+    var BuildApiFactoryObj = new BuildApiFactory('TFS');
         
-    BuildApiFactoryObject.GetBuildDefinitions(ProjectName);
-
+    //BuildApiFactory.constructor();
+    
+    switch (BuildApiFactoryObj.BuildServerType) {
+        case 'TFS': {
+            var BuildApiObj = BuildApiFactory.prototype.GetTFSBuildApi('', '');
+        }
+        //case 'JENKINS': {
+        //    var BuildApiObj = BuildApiFactory.prototype.GetJenkinsBuildApi('', '');
+        //}
+        //case default: { };
+    }
+    
+    var BuildDef = BuildApiObj.GetBuildDefinitions();
+                                       
     response.send(BuildDef);
 });
 
 //Get BuildDefinitions by BuildServer
-router.get('/Build/BuildDefinition/:BuildServer', function CheckOut(request, response) {
+router.get('/Build/BuildDefinition/:BuildServer', function GetBuildDefinitionByBuildServer(request, response) {
     response.send('Get BuildDefiniotion by BuildServer');
 });
 
+//ToDo:
 //Do we need POST to get all build definitions?
-//because 
-router.post('/Build/BuildDefinitions')
+//router.post('/Build/BuildDefinitions')
 
 //Add BuildDefinition
 router.put('/Build/BuildDefinition', function CheckOut(request, response) {

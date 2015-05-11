@@ -1,8 +1,12 @@
-﻿//private static
+﻿var BuildapiObj = require('./BuildApi.js');
+var TFSapi = require('../../Lib/TFSBuildApi');
+
+
+
+//private static
 var some_private_static_var_for_this_module = '';
 
-//Public
-module.exports.BuildApiFactory = BuildApiFactory;
+
 
 //Type definition
 var BuildApiFactory = function (BuildServerType) {
@@ -30,10 +34,15 @@ BuildApiFactory.prototype = {
         //1. Get "BuildAPI" object
         //2. Customize BuildAPI for TFS ????
         //3. return BuildAPI (TFS)
-        return 'Return the TFSBuildAPI object';
+        
+        TFSapiobj = new TFSapi();        
+        return TFSapiobj;
     },
     
     GetJenkinsBuildApi: function GetJenkinsBuildApi(param1, param2) {
         return 'Return the JenkinsBuildAPI object';
     }
 };
+
+//Public
+module.exports = BuildApiFactory;

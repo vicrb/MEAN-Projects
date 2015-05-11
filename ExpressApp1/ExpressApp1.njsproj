@@ -31,6 +31,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="Lib\JenkinsBuildApi.js" />
+    <Compile Include="Lib\TFSBuildApi.js" />
     <Compile Include="routes\BuildApi\BuildApi.js" />
     <Compile Include="routes\BuildApi\BuildAPIFactory.js" />
     <Compile Include="routes\DBApi\Book_Schema.js" />

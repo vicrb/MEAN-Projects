@@ -1,4 +1,5 @@
-﻿//Build API
+﻿
+//Build API
 //Parent object
 
 //Module Private vars
@@ -22,6 +23,19 @@ BuildAPI.prototype = {
     //Only implement if it holds good for any instance type (TFS, Jen, ...n)
 
     GetBuildDefinitions: function GetBuildDefinitions(){
+
+        //Temp
+        var BuildDef = {
+            BuildServer: "Test1",
+            ConfigurationFolderPath: "/../Config",
+            DefaultDropLocation: "/DropLoc",
+            Description: "TestDesc",
+            Enabled: "Y",
+            RetentionPolicies: "",
+            Workspace: "/Root"
+        };
+
+        return BuildDef;
 
     },
 
@@ -49,39 +63,3 @@ BuildAPI.prototype = {
 module.exports = BuildAPI;
 
 
-//Child object
-//TFSBuildApi
-function TFSBuildAPI(){
-    BuildAPI.apply(this, Array.prototype.slice.call(arguments));
-}
-
-//Inherited overriding??
-TFSBuildAPI.prototype = new BuildAPI;
-TFSBuildAPI.prototype = {
-    //Overriding
-    GetBuildDefinitions: function GetBuildDefinitions() {
-        //Do something here
-        //Call base method
-        BuildAPI.prototype.GetBuildDefinitions();
-    },
-    
-    GetBuildsList: function GetBuildsList() {
-
-    },
-    
-    GetBuild: function GetBuild() {
-
-    },
-    
-    GetBuildDetails: function GetBuildDetails() {
-
-    },
-    
-    ModifyBuild: function ModifyBuild() {
-
-    },
-    
-    DeleteBuild: function DeleteBuild() {
-
-    }
-}
